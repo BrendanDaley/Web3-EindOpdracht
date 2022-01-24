@@ -68,25 +68,22 @@ expressRouter.get("/besetelling/:id", (req, res) => {
 //POST
 PostBestelling:
 expressRouter.post("/postbestelling", (req, res) => {
-  const productId = req.body.productId;
-  const besetllingId = req.body.besetllingId;
-  const aantal = req.body.aantal;
-  const datum = req.body.datum;
-  const klantId = req.body.klantId;
 
   db.query(
-    "insert into product (datum, klantId) values (?,?)",
-    [datum,klantId],
+    `insert into bestelling (datum, klantNaam, klantAchterNaam, klantEmail) values (${req.body.datum}, ${req.body.naam}, ${req.body.achterNaam}, ${req.body.email})`,
     (err, results) => {
       if(err){
         console.log(err)
       }else{res.send("post bestelling succesfull")}
     }
   );
+  
+  const lastId = db.query(
+      //last inserted id
+    )
 
   db.query(
-    "insert into product_bestelling (productId, bestellingId, aantal) values (?,?,?)",
-    [productId,besetllingId,aantal],
+    `insert into product_bestelling (productId, bestellingId, aantal) values (${req.body.productId}, ${lastId}, ${req.body.aantal},)`,
     (err, results) => {
       if(err){
         console.log(err)
