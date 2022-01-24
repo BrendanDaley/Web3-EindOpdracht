@@ -27,10 +27,10 @@ DROP TABLE IF EXISTS `bestelling`;
 CREATE TABLE `bestelling` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `datum` date DEFAULT NULL,
-  `klantId` int NOT NULL,
-  PRIMARY KEY (`Id`),
-  KEY `klantId_idx` (`klantId`),
-  CONSTRAINT `klantId` FOREIGN KEY (`klantId`) REFERENCES `klant` (`Id`)
+  `klantNaam` varchar(200) NOT NULL,
+  `klantAchterNaam` varchar(200) NOT NULL,
+  `klantEmail` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -40,35 +40,8 @@ CREATE TABLE `bestelling` (
 
 LOCK TABLES `bestelling` WRITE;
 /*!40000 ALTER TABLE `bestelling` DISABLE KEYS */;
-INSERT INTO `bestelling` VALUES (1,'2022-01-10',1),(2,'2022-01-10',1),(3,'2022-01-10',2),(4,'2022-01-10',2);
+INSERT INTO `bestelling` VALUES (1,'2022-01-10','brendan','daley','brendan.daley@student.hogent.be'),('David','Breckx','bavid.breckx@hogent.be','2022-01-10',1);
 /*!40000 ALTER TABLE `bestelling` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `klant`
---
-
-DROP TABLE IF EXISTS `klant`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `klant` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `naam` varchar(200) NOT NULL,
-  `achterNaam` varchar(200) NOT NULL,
-  `email` varchar(200) DEFAULT NULL,
-  `paswoord` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `klant`
---
-
-LOCK TABLES `klant` WRITE;
-/*!40000 ALTER TABLE `klant` DISABLE KEYS */;
-INSERT INTO `klant` VALUES (1,'brendan','daley','brendan.daley@student.hogent.be','$2a$10$Yvuel6eTot7bcZyWRN55y.6NBqNp078IODEQ/pUNcHyoG8picEcP6'),(2,'Dacid','Breckx','bavid.breckx@hogent.be','$2a$10$y5wzTaVtv/8CSbAffEntaOhrK.VBnutOIy6j0/w6EVA1VxktzfGVO');
-/*!40000 ALTER TABLE `klant` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -121,7 +94,7 @@ CREATE TABLE `product_bestelling` (
 
 LOCK TABLES `product_bestelling` WRITE;
 /*!40000 ALTER TABLE `product_bestelling` DISABLE KEYS */;
-INSERT INTO `product_bestelling` VALUES (1,1,1),(3,2,1),(6,1,2),(7,1,4);
+INSERT INTO `product_bestelling` VALUES (1,1,1),(3,2,1),(6,1,2),(7,1,2);
 /*!40000 ALTER TABLE `product_bestelling` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

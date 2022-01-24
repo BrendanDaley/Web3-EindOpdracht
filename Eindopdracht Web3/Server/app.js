@@ -8,7 +8,6 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const helmet = require('helmet');
 const cors = require('cors');
-const nodemon = require('nodemon');
 
 const app = express();
 
@@ -24,7 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(helmet());
 app.use(cors());
-app.use(nodemon());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
