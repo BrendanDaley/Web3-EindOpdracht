@@ -1,0 +1,2 @@
+#Node modules dont get added to github
+node_modules/
