@@ -40,7 +40,7 @@ CREATE TABLE `bestelling` (
 
 LOCK TABLES `bestelling` WRITE;
 /*!40000 ALTER TABLE `bestelling` DISABLE KEYS */;
-INSERT INTO `bestelling` VALUES (1,'2022-01-10','brendan','daley','brendan.daley@student.hogent.be'),('David','Breckx','bavid.breckx@hogent.be','2022-01-10',1);
+INSERT INTO `bestelling` VALUES (1,'2022-01-10','brendan','daley','brendan.daley@student.hogent.be'),(2,'2022-01-10','David','Breckx','bavid.breckx@hogent.be');
 /*!40000 ALTER TABLE `bestelling` ENABLE KEYS */;
 UNLOCK TABLES;
 
