@@ -13,11 +13,12 @@ GetAllProducts:
   });
 }),
 
-
 GetProductById:
-expressRouter.get("/productopid", (req, res) => {
-  const id = req.body.Id;
-  db.query("Select * from product Where Id = (?)", [id], (err, results) => {
+expressRouter.get("/productop/:id", (req, res) => {
+  db.query(`Select * from product Where Id = ${req.params.id}`, (err, results) => {
+    if(err){
+      res.send(err);
+    }
     const value = results;
     res.json(value);
   });
@@ -53,10 +54,13 @@ expressRouter.get("/bestelling", (req, res) => {
 
 //get besetlling op ID
 GetBestellingById:
-expressRouter.get("/besetellingopid", (req, res) => {
-  const id = req.body.Id;
-  db.query("Select * from product Where Id = (?)", [id], (err, results) => {
-    value = results;
+expressRouter.get("/besetelling/:id", (req, res) => {
+  console.log(req.params.id);
+  db.query(`Select * from bestelling Where Id = ${req.params.id}`, (err, results) => {
+    if(err){
+      res.send(err);
+    }
+    const value = results;
     res.json(value);
   });
 }),
@@ -79,6 +83,7 @@ expressRouter.post("/postbestelling", (req, res) => {
       }else{res.send("post bestelling succesfull")}
     }
   );
+
   db.query(
     "insert into product_bestelling (productId, bestellingId, aantal) values (?,?,?)",
     [productId,besetllingId,aantal],
