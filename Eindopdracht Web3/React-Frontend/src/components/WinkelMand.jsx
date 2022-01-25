@@ -3,7 +3,7 @@ import "./Css/Winkelmand.css";
 
 const WinkelMand = () => {
   return (
-    <div>
+    <div className="Winkelmand">
       <h1>Winkelmandje</h1>
     </div>
   );

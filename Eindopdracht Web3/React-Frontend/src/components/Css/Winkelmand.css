@@ -1,0 +1,7 @@
+.Winkelmand {
+  display: flex;
+  padding: 10px;
+  margin: 20px;
+  flex-direction: column;
+  align-items: center;
+}
