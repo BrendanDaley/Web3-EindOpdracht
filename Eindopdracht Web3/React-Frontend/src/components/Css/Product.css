@@ -1,5 +1,32 @@
 .Product {
-  width: auto;
+  width: 250px;
   height: fit-content;
   padding: 10px;
+  padding: 10px 16px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.Product img {
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.Product:hover {
+  box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+.Product h1 {
+  font-size: 20px;
+  color: #3b3d3b;
+  margin-bottom: 8px;
+}
+
+.QantityButtons {
+  margin: 5px;
+  padding: 2px;
 }
