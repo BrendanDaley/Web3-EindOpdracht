@@ -1,24 +1,15 @@
-import React from 'react';
-import './Product.css';
-import {Link} from 'react-router-dom';
+import React from "react";
+import "./Css/Product.css";
+//import { Link } from "react-router-dom";
 
-const Product = ({imageNumber, name, price, description, productId}) => {
-    return (
-        <div className="product">
-        <img src={`SneakerPhotos\${imageNumber}`} alt={name}/>
+const Product = () => {
+  return (
+    <div className="Product">
+      <h1>Product Naam</h1>
+      <img src="SneakerPhotos/1.webp" typeof="webp" alt="" />
+      <h3>Product details</h3>
+    </div>
+  );
+};
 
-        <div className="product__info">
-            <p className="info__name">{name}</p>
-            <p className="info__description">
-            {description}
-            </p>
-            <p className="info__price">€{price}</p>
-            <Link to={`/product/${productId}`} className="info__button">
-            View
-            </Link>
-        </div>
-        </div>
-    )
-}
-
-export default Product
+export default Product;
