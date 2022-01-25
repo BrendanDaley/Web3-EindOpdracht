@@ -3,7 +3,6 @@ import "./Css/Winkelmand.css";
 import WinkelmandItem from "./WinkelmandItem";
 
 const WinkelMand = () => {
-  const [WinkelMandItems, setWinkelMandItems] = useState([]);
   return (
     <div className="Producten">
       {WinkelMandItems.map((winkelmandItem) => (

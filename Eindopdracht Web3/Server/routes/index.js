@@ -26,35 +26,12 @@ const Router = {
     );
   }),
 
-  //BESTELLINGEN
-  GetBestllingen: expressRouter.get("/bestelling", (req, res) => {
-    db.query("Select * from bestelling", (err, results) => {
-      const value = results;
-      res.json(value);
-    });
-  }),
-
-  //get besetlling op ID
-  GetBestellingById: expressRouter.get("/besetelling/:id", (req, res) => {
-    console.log(req.params.id);
-    db.query(
-      `Select * from bestelling Where Id = ?`,
-      [req.params.id],
-      (err, results) => {
-        if (err) {
-          res.send(err);
-        }
-        const value = results;
-        res.json(value);
-      }
-    );
-  }),
-
-  //POST
+  //POST Bestelling
   PostBestelling: expressRouter.post("/postbestelling", (req, res) => {
     let id;
     let datum = new Date();
     const { klantNaam, klantAchterNaam, klantEmail } = req.body;
+
     db.query(
       `insert into bestelling (datum, klantNaam, klantAchterNaam, klantEmail) values (?,?,?,?)`,
       [datum, klantNaam, klantAchterNaam, klantEmail],
@@ -63,7 +40,7 @@ const Router = {
           console.log(err);
         } else {
           res.send("post bestelling succesful");
-          console.log(`Inserted id: ${results.insertId}`);
+          console.log(`Inserted id: ${id}`);
           id = results.insertId;
         }
       }

@@ -6,6 +6,7 @@ import Homepage from "./components/Homepage";
 import Products from "./components/Producten";
 import WinkelMand from "./components/WinkelMand";
 import Aboutpage from "./components/Aboutpage";
+import Footer from "./components/FooterComponent";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/about" element={<Aboutpage />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }
