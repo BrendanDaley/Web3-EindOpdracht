@@ -2,12 +2,7 @@ import React from 'react'
 import axios from 'axios';
 
 const Orders = () => {
-
-
     const [orders, setOrder] = useState([]);
-
-
-
 
     return (
         <div>
