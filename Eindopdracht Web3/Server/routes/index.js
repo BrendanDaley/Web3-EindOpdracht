@@ -1,7 +1,8 @@
 const express = require("express");
 const expressRouter = express.Router();
 const db = require("../config/db");
-const cors = require("cors");
+
+
 
 const Router = {
 //PRODUCTEN

@@ -1,13 +1,14 @@
 const express = require('express');
+const Axios = require('axios');
 
-const router = express.Router();
+const Routes = express.Router();
 
 
-router.get('/hello', (req,res)=>{
-    res.send('Hello from routes');
+router.get('/producten', (req,res)=>{
+    
 });
 
 
 
 
-module.exports = router;
+module.exports = Routes;
