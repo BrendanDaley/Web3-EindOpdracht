@@ -5,3 +5,12 @@
   flex-direction: column;
   align-items: center;
 }
+
+.OrderButton {
+  background-color: #30e330;
+  height: 30px;
+  width: 100px;
+  align-self: center;
+  border: none;
+  border-radius: 10px;
+}

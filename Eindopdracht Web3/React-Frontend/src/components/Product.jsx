@@ -11,7 +11,7 @@ const Product = ({ data }) => {
       <img className="product_img" src={data.imageLink} />
       <p className="product_merk">Merk: {data.merk}</p>
       <p className="product_prijs">Prijs: ${data.prijs}</p>
-      <p className="product_prijs">Aantal: {aantalStuks}</p>
+      <p className="product_aantal">Aantal: {aantalStuks}</p>
       <div className="QantityButtons">
         <button className="add">-</button>
         <button className="subtract">+</button>

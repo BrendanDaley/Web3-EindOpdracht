@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import "./Css/Producten.css";
 import Product from "./Product";
 const axios = require("axios");
+
 const Products = () => {
   const [producten, setProducten] = useState([
     {
@@ -41,6 +42,7 @@ const Products = () => {
       beschrijving: "testbescrijving lalalalalal",
     },
   ]);
+
   return (
     <div className="Producten">
       {producten.map((product) => (

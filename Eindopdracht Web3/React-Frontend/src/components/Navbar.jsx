@@ -8,8 +8,8 @@ const Navbar = () => {
       <h1>Shoe Store.</h1>
       <div>
         <a href="/">Home</a>
-        <a href="/producten">Producten</a>
-        <a href="/winkelmand"> Winkel mandje</a>
+        <a href="/producten">Shop</a>
+        <a href="/winkelmand"> Winkel Mand</a>
         <a href="/about">Over Ons</a>
       </div>
     </nav>
