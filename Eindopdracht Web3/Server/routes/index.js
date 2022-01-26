@@ -29,33 +29,48 @@ const Router = {
   //POST Bestelling
   PostBestelling: expressRouter.post("/postbestelling", (req, res) => {
     let id;
+    let klant = req.body.klant;
     let datum = new Date();
-    const { klantNaam, klantAchterNaam, klantEmail } = req.body;
+    const { naam, achterNaam, email } = klant;
+    let bestelling = req.body.producten;
 
     db.query(
       `insert into bestelling (datum, klantNaam, klantAchterNaam, klantEmail) values (?,?,?,?)`,
-      [datum, klantNaam, klantAchterNaam, klantEmail],
+      [datum, naam, achterNaam, email],
       (err, results) => {
         if (err) {
           console.log(err);
         } else {
           res.send("post bestelling succesful");
-          console.log(`Inserted id: ${id}`);
-          id = results.insertId;
         }
       }
     );
 
-    // db.query(
-    //   `insert into product_bestelling (productId, bestellingId, aantal) values (?,?,?)`,[req.body.productId, lastId, req.body.aantal],
-    //   (err, results) => {
-    //     if (err) {
-    //       console.log(err);
-    //     } else {
-    //       res.send("post product_bestelling succesfull");
-    //     }
-    //   }
-    // );
+    db.query(
+      `SELECT Id FROM bestelling ORDER BY Id DESC LIMIT 1`,
+      [],
+      (err, results) => {
+        if (err) {
+          console.log(err);
+        } else {
+          id = results.insertedId;
+        }
+      }
+    );
+    /*
+    bestelling.forEach((item) => {
+      db.query(
+        `insert into product_bestelling (productId, bestellingId, aantal) values (?,?,?)`,
+        [item.productId, id, item.aantal],
+        (err, results) => {
+          if (err) {
+            console.log(err);
+          } else {
+            res.send("post product_bestelling succesfull");
+          }
+        }
+      );
+    });*/
   }),
 };
 

@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchProducten } from "../Redux/Slices/ProductSlice";
-import { addItem } from "../Redux/Slices/CartSlice";
+import { addToCart } from "../Redux/Slices/Cart/cartAction";
 import "./Css/Producten.css";
 import { Button } from "@mui/material";
 import FooterComponent from "./FooterComponent";
@@ -11,7 +11,6 @@ const Products = () => {
   const dispatch = useDispatch();
 
   const productenState = useSelector((state) => state.producten);
-  const cartState = useSelector((state) => state.cart);
 
   const [aantal, setAantal] = useState(0);
 
@@ -56,11 +55,7 @@ const Products = () => {
             <Button
               variant="contained"
               className="AddToCart"
-              onClick={() => {
-                product["aantal"] = aantal;
-                console.log(product);
-                dispatch(addItem(product));
-              }}
+              onClick={() => dispatch(addToCart(product, aantal))}
             >
               Voeg Toe
             </Button>

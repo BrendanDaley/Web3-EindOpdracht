@@ -32,12 +32,11 @@ const CheckoutPage = () => {
         klant: values,
         producten: cartItems,
       };
-      axios
-        .post("http://localhost:4000/postbestelling", data)
-        .then((res) => {});
+      axios.post("http://localhost:4000/postbestelling", data);
     },
     validationSchema: schema,
   });
+
   return (
     <div className="CheckoutPage">
       <h1>Vul uw gegevens in</h1>
@@ -107,13 +106,3 @@ const CheckoutPage = () => {
 };
 
 export default CheckoutPage;
-
-{
-  /*export const PostBestelling = createAsyncThunk("postbestelling", async () => {
-  const response = await axios({
-    url: "http://localhost:4000/postbestelling",
-    method: "POST",
-  });
-  return response;
-}); */
-}
