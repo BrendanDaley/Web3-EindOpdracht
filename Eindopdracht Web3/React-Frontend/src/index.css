@@ -11,6 +11,7 @@
   margin: 0 auto;
   border-bottom: 1px solid white;
   background-color: #3471eb;
+  border: none;
 }
 
 .navbar h1 {
@@ -23,7 +24,8 @@
 }
 
 .navbar a {
-  margin-left: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
   text-decoration: none;
   padding: 6xp;
   color: white;

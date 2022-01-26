@@ -5,12 +5,11 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1>Shoe Store.</h1>
+      <h1>SHOE STORE.</h1>
       <div>
         <a href="/">Home</a>
         <a href="/producten">Shop</a>
-        <a href="/winkelmand"> Winkel Mand</a>
-        <a href="/about">Over Ons</a>
+        <a href="/winkelmand"> Winkelmand</a>
       </div>
     </nav>
   );

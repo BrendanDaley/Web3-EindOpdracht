@@ -1,7 +1,20 @@
+.HomePage {
+  height: 90vh;
+  background-image: url("https://i.pinimg.com/originals/65/44/63/6544636e936c4b67dcf2265f4a42d463.png");
+  background-size: 100% 100%;
+}
+
 .WelcomeText {
+  height: 100%;
   display: flex;
   padding: 10px;
-  margin: 20px;
+  margin: 0px;
   flex-direction: column;
   align-items: center;
+}
+
+.WelcomeText,
+h1,
+h3 {
+  color: white;
 }
