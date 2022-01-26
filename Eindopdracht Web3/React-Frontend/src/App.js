@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage";
 import Products from "./components/Producten";
 import WinkelMand from "./components/WinkelMand";
-import Aboutpage from "./components/Aboutpage";
 import Footer from "./components/FooterComponent";
 import CheckoutPage from "./components/CheckoutPage";
 
@@ -18,12 +17,8 @@ function App() {
           <Route exact path="/" element={<Homepage />} />
           <Route exact path="/producten" element={<Products />} />
           <Route exact path="/winkelmand" element={<WinkelMand />} />
-          <Route exact path="/about" element={<Aboutpage />} />
           <Route exact path="/checkout" element={<CheckoutPage />} />
         </Routes>
-      </div>
-      <div className="Footer">
-        <Footer />
       </div>
     </Router>
   );

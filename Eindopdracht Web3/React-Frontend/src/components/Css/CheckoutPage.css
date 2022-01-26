@@ -1,0 +1,34 @@
+.CheckoutPage {
+  padding: 10px;
+  margin: 20px;
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+  align-items: center;
+}
+
+.CheckoutPage h1 {
+  color: black;
+}
+.CheckoutPage label,
+p {
+  padding: 10px;
+}
+
+.ButtonSubmitDiv {
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.ButtonSubmitDiv .Submit {
+  margin: 5px;
+  background-color: #50d631;
+  width: 120px;
+}
+.ButtonSubmitDiv .Cancel {
+  margin: 5px;
+  width: 120px;
+}

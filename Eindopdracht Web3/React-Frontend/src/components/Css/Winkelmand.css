@@ -1,50 +1,54 @@
 .Winkelmand {
   display: flex;
-  padding: 10px;
-  margin: 20px;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
+  padding: 10px;
+  margin: 20px;
+  width: 100%;
+  height: 100l;
 }
 
-.OrderButton {
-  background-color: #30e330;
-  height: 30px;
-  width: 100px;
-  align-self: center;
-  border: none;
-  border-radius: 10px;
+.CheckoutDiv {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100l;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid black;
+  background-color: lightskyblue;
 }
 
-.WinkelMandItem {
+.CheckoutDiv .CheckoutButton {
+  margin-bottom: 20px;
+}
+.CheckoutDiv .TotaalPrijs {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.WinkelmandItem {
   width: 250px;
   height: fit-content;
-  padding: 10px;
-  padding: 10px 16px;
-  margin: 5px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
+  background-color: lightgreen;
 }
 
-.WinkelMandItem img {
-  border-radius: 10px;
-  width: 200px;
-  height: 200px;
+.WinkelmandItem p {
+  padding: 1px;
+  font-weight: bold;
+  color: black;
 }
 
-.WinkelMandItem:hover {
+.WinkelmandItem:hover {
   box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.15);
 }
-
-.WinkelMandItem h1 {
-  font-size: 20px;
-  color: #3b3d3b;
-  margin-bottom: 8px;
-}
-
-.DeleteButton {
-  margin: 5px;
+.WinkelmandItem .DeleteButton {
+  margin-bottom: 10px;
   padding: 2px;
 }

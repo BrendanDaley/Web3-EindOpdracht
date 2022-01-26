@@ -1,28 +1,31 @@
 .FooterComponent {
-  margin-top: 10px;
+  margin-top: 0;
+  padding: 0;
   background-color: #323640;
+  display: flex;
   flex-direction: row;
   align-items: center;
   height: auto;
-  position: fixed;
   left: 0;
   bottom: 0;
   right: 0;
 }
 
 .summary {
+  align-items: center;
   color: white;
   font-size: 10px;
 }
 
 .ContactInfo {
-  padding: 5px;
+  align-items: center;
   margin: 10px;
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
 .ContactInfo p {
+  align-items: center;
   margin: 0px;
   padding: 5px;
   color: white;
