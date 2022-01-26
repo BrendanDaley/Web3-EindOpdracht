@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Css/Winkelmand.css";
 import { useDispatch, useSelector } from "react-redux";
+import { FetchWinkelmandItems, removeItem } from "../Redux/Slices/CartSlice";
 import { Button } from "@mui/material";
 import { useEffect } from "react";
 
@@ -10,6 +11,8 @@ import { useEffect } from "react";
 }
 
 const WinkelMand = () => {
+  const dispatch = useDispatch();
+  const cartState = useSelector((state) => state.cart);
   const [totaalPrijs, setTotaalPrijs] = useState();
 
   const [WinkelMandItems, setWinkelMandItems] = useState([
@@ -31,20 +34,16 @@ const WinkelMand = () => {
 
   const berekenTotaalPrijs = () => {
     let totaal = 0;
-    WinkelMandItems.map((WinkelMandItem) => {
+    cartState.map((WinkelMandItem) => {
       totaal += WinkelMandItem.aantal * WinkelMandItem.prijs;
     });
     setTotaalPrijs(totaal);
   };
 
-  const DeleteItem = (id) => {
-    const gefilterdeArray = WinkelMandItems.filter((item) => item.id !== id);
-    setWinkelMandItems(gefilterdeArray);
-  };
-
   useEffect(() => {
+    //dispatch(FetchWinkelmandItems());
     berekenTotaalPrijs();
-  });
+  }, []);
 
   return (
     <div>
@@ -59,7 +58,7 @@ const WinkelMand = () => {
         </div>
       </div>
       <div className="Producten">
-        {WinkelMandItems.map((data) => (
+        {cartState.map((data) => (
           <div className="WinkelmandItem" key={data.id}>
             <p className="naam">{data.naam}</p>
             <p className="prijs">Prijs pers stuk: ${data.prijs}</p>
@@ -68,7 +67,7 @@ const WinkelMand = () => {
               className="DeleteButton"
               variant="contained"
               onClick={() => {
-                DeleteItem(data.id);
+                dispatch(removeItem(data));
               }}
             >
               Verwijder Item

@@ -3,17 +3,18 @@
   width: 100%;
   display: flex;
   padding: 10px;
-  margin: 20px;
+  /*margin: 20px;*/
+  background-color: #333333;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 100px;
+  margin-bottom: 0;
 }
 
 .Product {
   width: 250px;
   height: 400px;
   padding: 10px 10px;
-  margin: 10px;
+  margin: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +29,7 @@
 }
 
 .Product:hover {
-  box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 3px 7px rgba(0, 0, 0, 1);
 }
 
 .Product h1 {

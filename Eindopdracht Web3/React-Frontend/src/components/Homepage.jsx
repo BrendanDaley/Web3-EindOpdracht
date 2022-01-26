@@ -1,4 +1,3 @@
-import React from "react";
 import "./Css/Homepage.css";
 import FooterComponent from "./FooterComponent";
 

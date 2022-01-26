@@ -1,23 +1,27 @@
-import React from "react";
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
-export const AddToChart = (item) => async (dispatch, getState) => {
-  const response = await axios({
-    url: `http://localhost:4000/product/${item.id}`,
-    method: "GET",
-    responseType: "json",
-  });
-};
+import { createSlice } from "@reduxjs/toolkit";
 
 const CartSlice = createSlice({
-  name: "producten",
-  initialState: {
-    data: [],
-    status: null,
-    error: null,
+  name: "cart",
+  initialState: [],
+  reducers: {
+    addItem: (state, action) => {
+      const product = action.payload;
+      console.log(product);
+      const cart = state;
+
+      const pId = findProduct(cart, product.productId);
+      const result = !pId ? [...state, action.payload] : [...state];
+      return result;
+    },
+    removeItem: (state, action) => {
+      return state.filter((i) => i.productId !== action.payload.productId);
+    },
   },
-  extraReducers: {},
 });
 
-export const { reducer } = CartSlice;
+const findProduct = (cart, pId) => {
+  return cart.some((p) => p.productId === pId);
+};
+
+export const { actions, reducer } = CartSlice;
+export const { addItem, removeItem } = actions;

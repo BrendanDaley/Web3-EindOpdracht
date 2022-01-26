@@ -1,5 +1,4 @@
 import React from "react";
-import { date } from "yup/lib/locale";
 import "./Css/FooterComponent.css";
 
 const FooterComponent = () => {
